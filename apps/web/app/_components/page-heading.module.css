@@ -1,0 +1,39 @@
+/*
+ * The greeting is the entire page: near-black canvas (#0A0A0A) carrying one
+ * light sentence (#EDEDED), both consumed through the app's existing
+ * --background / --foreground tokens so no new colors are introduced.
+ *
+ * Centered horizontally and vertically in the viewport, capped at ~24ch so the
+ * display type wraps predictably and never overflows on small screens.
+ */
+.heading {
+  min-height: 100dvh;
+  max-width: 24ch;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-geist-sans, system-ui, sans-serif);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 48px;
+    line-height: 58px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading {
+    font-size: 56px;
+    line-height: 68px;
+  }
+}
